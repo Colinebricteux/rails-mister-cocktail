@@ -1,0 +1,19 @@
+<h1>Welcome to the cocktail manager</h1>
+
+<h2>Name : <%= @cocktail.name %></h2>
+
+<ul>
+  <div class="doses"><% @cocktail.doses.each do |d| %>
+    <li class="dose"><%= "#{d.description} of #{d.ingredient.name}" %></li>
+    <% end %>
+  </div>
+</ul>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description, label: 'Description :' %>
+  <%= f.association :ingredient, label: 'Ingredient :' %>
+  <%= f.submit "Create a dose", class: "btn btn-primary" %>
+<% end %></%>
+
+<p><i class="fas fa-arrow-left"> </i> <%= link_to "BACK TO THE LIST", cocktails_path %></p>
+

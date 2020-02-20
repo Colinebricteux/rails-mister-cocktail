@@ -1,0 +1,16 @@
+<h1>Welcome to the cocktail manager</h1>
+
+<h2>Here is the list of all the cocktails :</h2>
+
+<ul>
+<div class="cocktails"><% @cocktails.each do |c| %>
+  <li class="cocktail"><%= link_to "#{c.name}", cocktail_path(c) %></li>
+  <% end %>
+</div>
+</ul>
+
+
+<p><i class="fas fa-plus"></i> <%= link_to "CREATE A NEW COCKTAIL", new_cocktail_path %></p>
+
+
+

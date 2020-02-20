@@ -1,0 +1,8 @@
+<h1>Welcome to the cocktail manager</h1>
+
+<h2>Create here your new cocktail :</h2>
+
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, label: 'Name of the cocktail', placeholder: 'Mojito' %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %></%>
